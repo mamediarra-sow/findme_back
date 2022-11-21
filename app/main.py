@@ -16,6 +16,9 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 api = AuthyApiClient(AUTHY_API_KEY)
+origins = [
+    "https://findme-01.web.app"
+]
 
 app.add_middleware(
     CORSMiddleware,
