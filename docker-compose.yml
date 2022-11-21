@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    image : findimage
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db 
+  db:
+    image: mysql:latest
+    platform: linux/amd64
+    environment:
+      - "MYSQL_ROOT_PASSWORD=Mamediarra99%"
+      - "MYSQL_DATABASE=findmedb"
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_volume:/var/lib/mysql
+
+
+volumes:
+    db_volume:
+      driver: local
