@@ -3,3 +3,4 @@ uvicorn
 SQLAlchemy
 mysql-connector-python
 authy
+phonenumbers
